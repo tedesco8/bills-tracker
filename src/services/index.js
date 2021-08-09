@@ -67,12 +67,11 @@ export const addRow = async (doc, date, who, amount, type, detail) => {
 };
 
 export const getTotalByMonth = async (doc, month, year) => {
-    if (doc) {
+  if (doc) {
     const sheet = getSheet(doc);
     const fetchedRows = await sheet.getRows();
     const totalsFiltered = fetchedRows.filter((e) => {
       const dateSplitted = split(e.Date);
-      console.log(dateSplitted)
       return (
         dateSplitted[2] === year.toString() &&
         dateSplitted[1] === month.toString()

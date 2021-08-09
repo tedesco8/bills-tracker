@@ -13,3 +13,4 @@ export { default as DropdownComponent } from "./Dropdown";
 export { default as BigModalComponent } from "./BigModal";
 export { default as DetailItemComponent } from "./DetailItem";
 export { default as MonthLegendComponent } from "./MonthLegend";
+export { default as CarouselComponent } from "./Carousel";

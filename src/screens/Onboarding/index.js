@@ -98,6 +98,8 @@ const Onboarding = () => {
     }
   };
 
+  const handleSetupGuide = () => history.push("/setup");
+
   return (
     <NoHeaderLayout>
       <S.Content>
@@ -131,7 +133,11 @@ const Onboarding = () => {
         </div>
         <div>
           <p className="text-center mb-0 mt-4">Need help?</p>
-          <ButtonComponent text="Setup guide" type="text" />
+          <ButtonComponent
+            text="Setup guide"
+            type="text"
+            action={handleSetupGuide}
+          />
         </div>
       </S.Content>
     </NoHeaderLayout>
