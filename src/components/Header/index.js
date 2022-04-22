@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Main, TitleContainer, ActionContainer } from "./styles";
-import { SignOutIcon } from "../";
+import { SignOutIcon, UserGearIcon } from "../";
 import { deleteUserSession } from "config/localStorage";
 import { useHistory } from "react-router-dom";
 import { GlobalContext, DispatchTypes } from "context";
@@ -53,9 +53,24 @@ const Header = ({
     });
   };
 
+  const openConfig = async () => {
+    // console.log("click!")
+    // let promise = await Notification.requestPermission();
+    // if (promise === 'granted') {
+
+    // } else {
+    //   console.log("promise", promise);
+    //   alert("You need to enable notifications to use this feature!")
+    // }
+    const test = () => "serviceWorker" in navigator && "PushManager" in window
+    console.log("test", test())
+  };
+
   return (
     <Main colorChange={colorChange}>
-      <ActionContainer></ActionContainer>
+      <ActionContainer onClick={() => openConfig()}>
+        <UserGearIcon />
+      </ActionContainer>
       <TitleContainer>
         <h1>{title}</h1>
         <h2>{subTitle}</h2>
