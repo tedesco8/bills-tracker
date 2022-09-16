@@ -184,22 +184,6 @@ const Onboarding = () => {
             value={values.spreadsheetId || ""}
             onChange={handleChange("spreadsheetId")}
           />
-          {/* <GoogleLogin
-            clientId={clientId}
-            buttonText="Login"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
-            cookiePolicy={'single_host_origin'}
-            uxMode="popup"
-            accessType="offline"
-            scope={sheetScope}
-            disabled={buttonDisabled}
-            className="googleButton"
-            isSignedIn={true}
-          /> */}
-          {/* <button onClick={loginWithGoogle} >
-            Login
-          </button> */}
           <GoogleLogin
             clientId={clientId}
             onSuccess={responseGoogle}
