@@ -5,11 +5,10 @@ import { InputComponent, ButtonComponent, LoadingComponent } from "components";
 import { useHistory } from "react-router-dom";
 import { checkCredentials } from "services";
 import * as S from "./styles";
-import GoogleLogin from 'react-google-login';
-import { sheetScope } from "config/sheet";
 import { getUserSession } from "config/localStorage";
 import { getAuthErrorMessage } from "config/errors";
 import Utils from "lib/utils";
+import GoogleLogin from 'react-google-login';
 
 const Onboarding = () => {
 
@@ -185,7 +184,7 @@ const Onboarding = () => {
             value={values.spreadsheetId || ""}
             onChange={handleChange("spreadsheetId")}
           />
-          <GoogleLogin
+          {/* <GoogleLogin
             clientId={clientId}
             buttonText="Login"
             onSuccess={responseGoogle}
@@ -197,6 +196,17 @@ const Onboarding = () => {
             disabled={buttonDisabled}
             className="googleButton"
             isSignedIn={true}
+          /> */}
+          {/* <button onClick={loginWithGoogle} >
+            Login
+          </button> */}
+          <GoogleLogin
+            clientId={clientId}
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+            isSignedIn={true}
+            disabled={buttonDisabled}
+            className="googleButton"
           />
           <S.GoogleDisclaimer>
             Google will ask permissions to share your name, email address, languaje preference and profile picture with BillsTracker. We don’t save or track any information about you.
